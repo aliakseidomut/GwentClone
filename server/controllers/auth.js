@@ -39,8 +39,25 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
     try {
+        const { username, password } = req.body
 
-    } catch (err) {}
+        const user = await User.findOne({ username })
+        if (!user) {
+            return res.json({
+                message: 'Такого пользователя не существует'
+            })
+        }
+
+        if(password !== user.password) {
+            return res.json({
+                message: 'Неверный пароль'
+            })
+        }
+    } catch (err) {
+        res.json({
+            message: 'Ошибка при авторизации'
+        })
+    }
 }
 
 export const getUser = async (req, res) => {
