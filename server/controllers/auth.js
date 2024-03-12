@@ -1,4 +1,5 @@
 import User from '../models/User.js'
+import jwt from 'jsonwebtoken'
 
 export const register = async (req, res) => {
     try {
@@ -53,6 +54,20 @@ export const login = async (req, res) => {
                 message: 'Неверный пароль'
             })
         }
+
+        const token = jwt.sign(
+            {
+                id: user._id
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: '30d' }
+        )
+
+        res.json({
+            token,
+            user,
+            message: 'Авторизация прошла успешно'
+        })
     } catch (err) {
         res.json({
             message: 'Ошибка при авторизации'
@@ -62,6 +77,29 @@ export const login = async (req, res) => {
 
 export const getUser = async (req, res) => {
     try {
+        const user = await User.findOne(req.userId)
+        if (!user) {
+            return res.json({
+                message: 'Такого пользователя не существует'
+            })
+        }
 
-    } catch (err) {}
+        const token = jwt.sign(
+            {
+                id: user._id
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: '30d' }
+        )
+
+        res.json({
+            token,
+            user,
+            message: 'Авторизация прошла успешно'
+        })
+    } catch (err) {
+        res.json({
+            message: 'Нет доступа'
+        });
+    }
 }
