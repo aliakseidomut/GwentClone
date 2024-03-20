@@ -1,0 +1,103 @@
+@keyframes slideme {
+    0% {
+      left: -30px;
+      margin-left: 0px;
+    }
+    30% {
+      left: 110%;
+      margin-left: 80px;
+    }
+    100% {
+      left: 110%;
+      margin-left: 80px;
+    }
+  }
+  
+  .btn-new {
+    overflow: hidden;
+    position: relative;
+  }
+
+.MainPage {
+    margin: 0 auto;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgb(9, 68, 14), rgb(8, 5, 36));
+    color: white;
+    padding-top: 50px;
+
+    img {
+        width: 500px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .buttonContainer {
+        width: 130px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    
+    button {
+        overflow: hidden;
+        position: relative;
+        width: 130px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid white;
+        background: radial-gradient(#134a5e, #2ba193);
+        font-family: "Oswald", sans-serif;
+        color: white;
+        font-size: 24px;
+        
+        &:hover {
+            cursor: pointer;
+            background: radial-gradient(#2ba193, #134a5e);
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 200px;
+            margin-left: 60px;
+            background: #fff;
+            opacity: 0.5;
+            position: absolute;
+            left: -40px;
+            top: -100px;
+            z-index: 1;
+            transform: rotate(45deg);
+            transition: all 0.1s;
+            animation-name: slideme;
+            animation-duration: 3s;
+            animation-delay: 0.05s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+          }
+    }
+
+    .Link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        margin: 0 auto;
+        border: 1px solid white;
+        background-color: rgba(255, 255, 255, 0.205);
+        color: white;
+        text-decoration-line: none;
+        margin-top: 25px;
+        padding: 3px;
+        font-family: "Bree Serif", serif;
+
+        &:hover {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background-color: rgba(255, 255, 255, 0.082);
+            color: rgba(255, 255, 255, 0.5);
+            transition: .3s;
+            cursor: pointer;
+        }
+    }
+}
