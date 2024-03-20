@@ -53,13 +53,13 @@ export const RegistrationPage:React.FC = () => {
   return (
     <div className='RegistrationPage'>
       <h1>Registration</h1>
-      <form action="#">  
+      <div className='form'>  
         <input required={true} placeholder='Name' type="text" value={username} onChange={e => setUsername(e.target.value)} />
         <input required={true} placeholder='Password' type="password" value={password} onChange={e => setPassword(e.target.value)} />
         <input required={true} placeholder='Repeat password' type="password" value={repeatPassword} onChange={e => setRepeatPassword(e.target.value)} />
         <input type="submit" value="Submit" onClick={handleSubmit} />
         <Link className='Link' to='/login'>Already have an account?</Link>
-      </form>
+      </div>
     </div>
   )
 }

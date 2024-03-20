@@ -45,12 +45,12 @@ export const LoginPage:React.FC = () => {
   return (
     <div className='LoginPage'>
       <h1>Login</h1>
-        <form action="#">
+      <div className='form'>
         <input required={true} placeholder='Name' type="text" value={username} onChange={e => setUsername(e.target.value)} />
-        <input required={true} placeholder='Password' type="text" value={password} onChange={e => setPassword(e.target.value)} />
+        <input required={true} placeholder='Password' type="password" value={password} onChange={e => setPassword(e.target.value)} />
         <input type="submit" value="Submit" onClick={handleSubmit} />
         <Link className='Link' to='/'>Register</Link>
-      </form>
+      </div>
     </div>
   )
 }

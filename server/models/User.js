@@ -9,12 +9,8 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        unique: true
-    },
-    cards: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Card'
-    }]
+        unique: false
+    }
 })
 
 export default mongoose.model('User', UserSchema)
