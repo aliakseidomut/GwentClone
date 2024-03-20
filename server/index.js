@@ -1,14 +1,15 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import { router as authRoute } from './routes/auth.js'
+import cors from 'cors'
+import authRoute from './routes/auth.js'
 
 const app = express()
 dotenv.config();
 
 app.use(cors())
 app.use(express.json())
-app.use('/auth', authRoute)
+app.use('/api/auth', authRoute)
 
 const start = async () => {
     try {

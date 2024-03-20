@@ -3,37 +3,37 @@ import jwt from 'jsonwebtoken'
 
 export const register = async (req, res) => {
     try {
-        const { username, email, password } = req.body
+        const { username, password } = req.body
 
         const isNameUsed = await User.findOne({ username })
         if (isNameUsed) {
             return res.json({
-                message: 'Пользователь с данным именем уже существует'
+                error: 'Пользователь с данным именем уже существует'
             })            
-        }
-        
-        const isEmailUsed = await User.findOne({ email }) 
-        if (isEmailUsed) {
-            return res.json({
-                message: 'Пользователь с данным email уже существует'
-            })
         }
 
         const newUser = new User({
             username,
-            email,
             password
         })
 
         await newUser.save()
 
+        const token = jwt.sign(
+            {
+                id: newUser._id
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: '30d' }
+        )
+
         res.json({
-            newUser,
-            message: 'Регистрация прошла успешно'
+            token,
+            user: newUser
         })
     } catch (err) {
         res.json({
-            message: 'Ошибка при регистрации'
+            error: 'Ошибка при регистрации'
         })
     }
 }
@@ -45,13 +45,13 @@ export const login = async (req, res) => {
         const user = await User.findOne({ username })
         if (!user) {
             return res.json({
-                message: 'Такого пользователя не существует'
+                error: 'Такого пользователя не существует'
             })
         }
 
         if(password !== user.password) {
             return res.json({
-                message: 'Неверный пароль'
+                error: 'Неверный пароль'
             })
         }
 
@@ -66,11 +66,10 @@ export const login = async (req, res) => {
         res.json({
             token,
             user,
-            message: 'Авторизация прошла успешно'
         })
     } catch (err) {
         res.json({
-            message: 'Ошибка при авторизации'
+            error: 'Ошибка при авторизации'
         })
     }
 }
@@ -80,7 +79,7 @@ export const getUser = async (req, res) => {
         const user = await User.findOne(req.userId)
         if (!user) {
             return res.json({
-                message: 'Такого пользователя не существует'
+                erorr: 'Такого пользователя не существует'
             })
         }
 
@@ -95,11 +94,11 @@ export const getUser = async (req, res) => {
         res.json({
             token,
             user,
-            message: 'Авторизация прошла успешно'
+            erorr: 'Авторизация прошла успешно'
         })
     } catch (err) {
         res.json({
-            message: 'Нет доступа'
+            erorr: 'Нет доступа'
         });
     }
 }
