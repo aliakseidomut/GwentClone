@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './LoginPage.scss'
-import { AnyAction, ThunkDispatch } from '@reduxjs/toolkit'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from 'redux/store'
+import { AppDispatch, RootState } from 'redux/store'
 import { warning } from '../../utils/toastify'
 import { User } from 'types/user'
 import { loginUser } from '../../redux/features/auth/authSlice'
@@ -14,7 +13,7 @@ export const LoginPage:React.FC = () => {
 
   const navigate = useNavigate();
 
-  const dispatch: ThunkDispatch<any, any, AnyAction> = useDispatch()
+  const dispatch: AppDispatch = useDispatch()
 
   const isAuth: boolean = useSelector((state: RootState) => Boolean(state.auth.token))
   const serverError: string | null = useSelector((state: RootState) => state.auth.error)

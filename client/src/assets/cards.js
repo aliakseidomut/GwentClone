@@ -1,10 +1,10 @@
-[
+export const cardsInfo = [
     {
       "name": "Mysterious Elf",
       "type": "CloseCombat",
       "power": 0,
       "ability": "Spy",
-      "img": "./assets/images/MysteriousElf.jpg",
+      "img": "./assets/images/MysteriousElf.png",
       "fraction": "Neutral",
       "hero": true
     },
@@ -13,7 +13,7 @@
       "type": "Ranged",
       "power": 7,
       "ability": "Medic",
-      "img": "./assets/images/YenneferofVengerberg.jpg",
+      "img": "./assets/images/YenneferofVengerberg.png",
       "fraction": "Neutral",
       "hero": true
     },
@@ -22,7 +22,7 @@
       "type": "CloseCombat",
       "power": 7,
       "ability": "",
-      "img": "./assets/images/TrissMerigold.jpg",
+      "img": "./assets/images/TrissMerigold.png",
       "fraction": "Neutral",
       "hero": true
     },
@@ -31,7 +31,7 @@
       "type": "CloseCombat",
       "power": 15,
       "ability": "",
-      "img": "./assets/images/GeraltofRivia.jpg",
+      "img": "./assets/images/GeraltofRivia.png",
       "fraction": "Neutral",
       "hero": true
     },
@@ -40,7 +40,7 @@
       "type": "CloseCombat",
       "power": 15,
       "ability": "",
-      "img": "./assets/images/Ciri.jpg",
+      "img": "./assets/images/Ciri.png",
       "fraction": "Neutral",
       "hero": true
     },
@@ -49,7 +49,7 @@
       "type": "CloseCombat",
       "power": 10,
       "ability": "",
-      "img": "./assets/images/LethoofGulet.jpg",
+      "img": "./assets/images/LethoofGulet.png",
       "fraction": "Nilfgaard",
       "hero": true
     },
@@ -58,7 +58,7 @@
       "type": "CloseCombat",
       "power": 10,
       "ability": "Medic",
-      "img": "./assets/images/MennoCoehoorn.jpg",
+      "img": "./assets/images/MennoCoehoorn.png",
       "fraction": "Nilfgaard",
       "hero": true
     },
@@ -67,7 +67,7 @@
       "type": "Siege",
       "power": 10,
       "ability": "",
-      "img": "./assets/images/MorvranVoohris.jpg",
+      "img": "./assets/images/MorvranVoohris.png",
       "fraction": "Nilfgaard",
       "hero": true
     },
@@ -76,7 +76,7 @@
       "type": "Ranged",
       "power": 10,
       "ability": "",
-      "img": "./assets/images/TiborEggebracht.jpg",
+      "img": "./assets/images/TiborEggebracht.png",
       "fraction": "Nilfgaard",
       "hero": true
     },
@@ -85,7 +85,7 @@
       "type": "CloseCombat",
       "power": 10,
       "ability": "",
-      "img": "./assets/images/VernonRoche.jpg",
+      "img": "./assets/images/VernonRoche.png",
       "fraction": "NorthernRealms",
       "hero": true
     },
@@ -94,7 +94,7 @@
       "type": "Ranged",
       "power": 10,
       "ability": "",
-      "img": "./assets/images/PhilippaEilhart.jpg",
+      "img": "./assets/images/PhilippaEilhart.png",
       "fraction": "NorthernRealms",
       "hero": true
     },
@@ -103,7 +103,7 @@
       "type": "CloseCombat",
       "power": 10,
       "ability": "",
-      "img": "./assets/images/EsteradThyssen.jpg",
+      "img": "./assets/images/EsteradThyssen.png",
       "fraction": "NorthernRealms",
       "hero": true
     },
@@ -112,7 +112,7 @@
       "type": "CloseCombat",
       "power": 10,
       "ability": "",
-      "img": "./assets/images/JohnNatalis.jpg",
+      "img": "./assets/images/JohnNatalis.png",
       "fraction": "NorthernRealms",
       "hero": true
     },
@@ -121,7 +121,7 @@
         "type": "CloseCombat",
         "power": 2,
         "ability": "Commander's Horn",
-        "img": "./assets/images/Lyutik.jpg",
+        "img": "./assets/images/Lyutik.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -130,7 +130,7 @@
         "type": "CloseCombat",
         "power": 5,
         "ability": "",
-        "img": "./assets/images/Dandelion.jpg",
+        "img": "./assets/images/Dandelion.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -139,7 +139,7 @@
         "type": "CloseCombat",
         "power": 5,
         "ability": "",
-        "img": "./assets/images/ZoltanChivay.jpg",
+        "img": "./assets/images/ZoltanChivay.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -148,7 +148,7 @@
         "type": "CloseCombat",
         "power": 5,
         "ability": "",
-        "img": "./assets/images/EmielRegisRohellecTerzieff.jpg",
+        "img": "./assets/images/EmielRegisRohellecTerzieff.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -157,7 +157,7 @@
         "type": "CloseCombat",
         "power": 6,
         "ability": "",
-        "img": "./assets/images/Vesemir.jpg",
+        "img": "./assets/images/Vesemir.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -166,7 +166,7 @@
         "type": "CloseCombat",
         "power": 7,
         "ability": "Scorch - Close Combat",
-        "img": "./assets/images/Villentretenmerth.jpg",
+        "img": "./assets/images/Villentretenmerth.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -175,7 +175,7 @@
         "type": "CloseCombat",
         "power": 8,
         "ability": "",
-        "img": "./assets/images/SkelligeArmedForces.jpg",
+        "img": "./assets/images/SkelligeArmedForces.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -184,7 +184,7 @@
         "type": "CloseCombat",
         "power": 2,
         "ability": "",
-        "img": "./assets/images/Vreemde.jpg",
+        "img": "./assets/images/Vreemde.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -193,7 +193,7 @@
         "type": "CloseCombat",
         "power": 2,
         "ability": "Bond",
-        "img": "./assets/images/NausicaaCavalryBrigade.jpg",
+        "img": "./assets/images/NausicaaCavalryBrigade.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -202,7 +202,7 @@
         "type": "CloseCombat",
         "power": 3,
         "ability": "Bond",
-        "img": "./assets/images/ImperaBrigade.jpg",
+        "img": "./assets/images/ImperaBrigade.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -211,7 +211,7 @@
         "type": "CloseCombat",
         "power": 3,
         "ability": "",
-        "img": "./assets/images/Morteisen.jpg",
+        "img": "./assets/images/Morteisen.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -220,7 +220,7 @@
         "type": "CloseCombat",
         "power": 4,
         "ability": "Spy",
-        "img": "./assets/images/VattierdeRideaux.jpg",
+        "img": "./assets/images/VattierdeRideaux.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -229,7 +229,7 @@
         "type": "CloseCombat",
         "power": 4,
         "ability": "",
-        "img": "./assets/images/Rainfarn.jpg",
+        "img": "./assets/images/Rainfarn.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -238,7 +238,7 @@
         "type": "CloseCombat",
         "power": 5,
         "ability": "Bond",
-        "img": "./assets/images/YongEmissary.jpg",
+        "img": "./assets/images/YongEmissary.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -247,7 +247,7 @@
         "type": "CloseCombat",
         "power": 6,
         "ability": "",
-        "img": "./assets/images/CahirMawrDyffrynAepCeallach.jpg",
+        "img": "./assets/images/CahirMawrDyffrynAepCeallach.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -256,7 +256,7 @@
         "type": "CloseCombat",
         "power": 7,
         "ability": "Spy",
-        "img": "./assets/images/ShilardFitzOesterlen.jpg",
+        "img": "./assets/images/ShilardFitzOesterlen.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -265,16 +265,16 @@
         "type": "CloseCombat",
         "power": 9,
         "ability": "Spy",
-        "img": "./assets/images/StefanSkellen.jpg",
+        "img": "./assets/images/StefanSkellen.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
       {
-        "name": "Poor F---ing Infantry",
+        "name": "Poor FIng Infantry",
         "type": "CloseCombat",
         "power": 1,
         "ability": "Bond",
-        "img": "./assets/images/PoorFIngInfantry.jpg",
+        "img": "./assets/images/PoorFIngInfantry.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -283,7 +283,7 @@
         "type": "CloseCombat",
         "power": 1,
         "ability": "",
-        "img": "./assets/images/RedanianFootSoldier.jpg",
+        "img": "./assets/images/RedanianFootSoldier.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -292,7 +292,7 @@
         "type": "CloseCombat",
         "power": 2,
         "ability": "",
-        "img": "./assets/images/YarpenZigrin.jpg",
+        "img": "./assets/images/YarpenZigrin.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -301,7 +301,7 @@
         "type": "CloseCombat",
         "power": 4,
         "ability": "Bond",
-        "img": "./assets/images/BlueStripesCommando.jpg",
+        "img": "./assets/images/BlueStripesCommando.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -310,7 +310,7 @@
         "type": "CloseCombat",
         "power": 4,
         "ability": "Spy",
-        "img": "./assets/images/SigismundDijkstra.jpg",
+        "img": "./assets/images/SigismundDijkstra.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -319,7 +319,7 @@
         "type": "CloseCombat",
         "power": 5,
         "ability": "",
-        "img": "./assets/images/Bianka.jpg",
+        "img": "./assets/images/Bianka.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -328,7 +328,7 @@
         "type": "CloseCombat",
         "power": 5,
         "ability": "Spy",
-        "img": "./assets/images/PrinceStennis.jpg",
+        "img": "./assets/images/PrinceStennis.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -337,7 +337,7 @@
         "type": "CloseCombat",
         "power": 5,
         "ability": "",
-        "img": "./assets/images/SigismundDenesle.jpg",
+        "img": "./assets/images/SigismundDenesle.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -346,16 +346,16 @@
         "type": "RangedCombat",
         "power": 0,
         "ability": "Hidden Property",
-        "img": "./assets/images/Cow.jpg",
+        "img": "./assets/images/Cow.png",
         "fraction": "Neutral",
         "hero": false
       },
       {
-        "name": "Gaunter O’Dimm: Darkness",
+        "name": "Gaunter O Dimm: Darkness",
         "type": "RangedCombat",
         "power": 4,
         "ability": "Duplicate",
-        "img": "./assets/images/GaunterODimmDarkness.jpg",
+        "img": "./assets/images/GaunterODimmDarkness.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -364,16 +364,7 @@
         "type": "RangedCombat",
         "power": 1,
         "ability": "Medic",
-        "img": "./assets/images/ArcherSupport.jpg",
-        "fraction": "Nilfgaard",
-        "hero": false
-      },
-      {
-        "name": "Archer Support",
-        "type": "RangedCombat",
-        "power": 1,
-        "ability": "Medic",
-        "img": "./assets/images/ArcherSupport.jpg",
+        "img": "./assets/images/ArcherSupport.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -382,7 +373,7 @@
         "type": "RangedCombat",
         "power": 2,
         "ability": "",
-        "img": "./assets/images/Albrich.jpg",
+        "img": "./assets/images/Albrich.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -391,7 +382,7 @@
         "type": "RangedCombat",
         "power": 2,
         "ability": "",
-        "img": "./assets/images/Sweers.jpg",
+        "img": "./assets/images/Sweers.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -400,7 +391,7 @@
         "type": "RangedCombat",
         "power": 3,
         "ability": "",
-        "img": "./assets/images/Puttkammer.jpg",
+        "img": "./assets/images/Puttkammer.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -409,7 +400,7 @@
         "type": "RangedCombat",
         "power": 4,
         "ability": "",
-        "img": "./assets/images/Vanhemar.jpg",
+        "img": "./assets/images/Vanhemar.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -418,7 +409,7 @@
         "type": "RangedCombat",
         "power": 4,
         "ability": "",
-        "img": "./assets/images/Cynthia.jpg",
+        "img": "./assets/images/Cynthia.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -427,7 +418,7 @@
         "type": "RangedCombat",
         "power": 5,
         "ability": "",
-        "img": "./assets/images/RenualdaepMasten.jpg",
+        "img": "./assets/images/RenualdaepMasten.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -436,7 +427,7 @@
         "type": "RangedCombat",
         "power": 6,
         "ability": "",
-        "img": "./assets/images/AssirevarAnahid.jpg",
+        "img": "./assets/images/AssirevarAnahid.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -445,7 +436,7 @@
         "type": "RangedCombat",
         "power": 6,
         "ability": "",
-        "img": "./assets/images/FringillaVigo.jpg",
+        "img": "./assets/images/FringillaVigo.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -454,16 +445,7 @@
         "type": "RangedCombat",
         "power": 10,
         "ability": "",
-        "img": "./assets/images/BlackInfantryArcher.jpg",
-        "fraction": "Nilfgaard",
-        "hero": false
-      },
-      {
-        "name": "Black Infantry Archer",
-        "type": "RangedCombat",
-        "power": 10,
-        "ability": "",
-        "img": "./assets/images/BlackInfantryArcher.jpg",
+        "img": "./assets/images/BlackInfantryArcher.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -472,7 +454,7 @@
         "type": "RangedCombat",
         "power": 4,
         "ability": "",
-        "img": "./assets/images/SabrinaGlevissing.jpg",
+        "img": "./assets/images/SabrinaGlevissing.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -481,7 +463,7 @@
         "type": "RangedCombat",
         "power": 4,
         "ability": "",
-        "img": "./assets/images/SheldonSkaggs.jpg",
+        "img": "./assets/images/SheldonSkaggs.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -490,7 +472,7 @@
         "type": "RangedCombat",
         "power": 5,
         "ability": "",
-        "img": "./assets/images/KeiraMetz.jpg",
+        "img": "./assets/images/KeiraMetz.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -499,7 +481,7 @@
         "type": "RangedCombat",
         "power": 5,
         "ability": "Bond",
-        "img": "./assets/images/CrinfridReaversDragonHunter.jpg",
+        "img": "./assets/images/CrinfridReaversDragonHunter.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -508,7 +490,7 @@
         "type": "RangedCombat",
         "power": 5,
         "ability": "",
-        "img": "./assets/images/SiledeTansarville.jpg",
+        "img": "./assets/images/SiledeTansarville.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -517,25 +499,25 @@
         "type": "RangedCombat",
         "power": 6,
         "ability": "",
-        "img": "./assets/images/Dethmold.jpg",
+        "img": "./assets/images/Dethmold.png",
         "fraction": "Northern Realms",
         "hero": false
       },
       {
         "name": "Gaunter O'Dimm: Darkness",
-        "type": "Siege Support",
+        "type": "Siege Combat",
         "power": 4,
         "ability": "Duplicate",
-        "img": "./assets/images/GaunterODimmDarkness.jpg",
+        "img": "./assets/images/GaunterODimmDarkness.png",
         "fraction": "Neutral",
         "hero": false
       },
       {
         "name": "Siege Support",
-        "type": "Siege Support",
+        "type": "Siege Combat",
         "power": 0,
         "ability": "Medic",
-        "img": "./assets/images/SiegeSupport.jpg",
+        "img": "./assets/images/SiegeSupport.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -544,7 +526,7 @@
         "type": "Siege Combat",
         "power": 3,
         "ability": "",
-        "img": "./assets/images/RottenMangonel.jpg",
+        "img": "./assets/images/RottenMangonel.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -553,7 +535,7 @@
         "type": "Siege Combat",
         "power": 5,
         "ability": "",
-        "img": "./assets/images/ZerrikanianFireScorpion.jpg",
+        "img": "./assets/images/ZerrikanianFireScorpion.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -562,7 +544,7 @@
         "type": "Siege Combat",
         "power": 6,
         "ability": "Medic",
-        "img": "./assets/images/CombatEngineer.jpg",
+        "img": "./assets/images/CombatEngineer.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -571,7 +553,7 @@
         "type": "Siege Combat",
         "power": 10,
         "ability": "",
-        "img": "./assets/images/HeavyZerrikanianFireScorpion.jpg",
+        "img": "./assets/images/HeavyZerrikanianFireScorpion.png",
         "fraction": "Nilfgaard",
         "hero": false
       },
@@ -580,25 +562,7 @@
         "type": "Siege Support",
         "power": 1,
         "ability": "Tide of Power",
-        "img": "./assets/images/KaedweniSiegeExpert.jpg",
-        "fraction": "Northern Realms",
-        "hero": false
-      },
-      {
-        "name": "Kaedweni Siege Expert",
-        "type": "Siege Support",
-        "power": 1,
-        "ability": "Tide of Power",
-        "img": "./assets/images/KaedweniSiegeExpert.jpg",
-        "fraction": "Northern Realms",
-        "hero": false
-      },
-      {
-        "name": "Kaedweni Siege Expert",
-        "type": "Siege Support",
-        "power": 1,
-        "ability": "Tide of Power",
-        "img": "./assets/images/KaedweniSiegeExpert.jpg",
+        "img": "./assets/images/KaedweniSiegeExpert.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -607,7 +571,7 @@
         "type": "Spy",
         "power": 1,
         "ability": "Spy",
-        "img": "./assets/images/Thaler.jpg",
+        "img": "./assets/images/Thaler.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -616,7 +580,7 @@
         "type": "Siege Combat",
         "power": 5,
         "ability": "Medic",
-        "img": "./assets/images/DunBannerMedic.jpg",
+        "img": "./assets/images/DunBannerMedic.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -625,7 +589,7 @@
         "type": "Siege Combat",
         "power": 6,
         "ability": "",
-        "img": "./assets/images/Ballista.jpg",
+        "img": "./assets/images/Ballista.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -634,7 +598,7 @@
         "type": "Siege Support",
         "power": 6,
         "ability": "",
-        "img": "./assets/images/SiegeTower.jpg",
+        "img": "./assets/images/SiegeTower.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -643,16 +607,7 @@
         "type": "Siege Combat",
         "power": 6,
         "ability": "",
-        "img": "./assets/images/Trebuchet.jpg",
-        "fraction": "Northern Realms",
-        "hero": false
-      },
-      {
-        "name": "Trebuchet",
-        "type": "Siege Combat",
-        "power": 6,
-        "ability": "",
-        "img": "./assets/images/Trebuchet.jpg",
+        "img": "./assets/images/Trebuchet.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -661,7 +616,7 @@
         "type": "Siege Combat",
         "power": 8,
         "ability": "Tight Bond",
-        "img": "./assets/images/Catapult.jpg",
+        "img": "./assets/images/Catapult.png",
         "fraction": "Northern Realms",
         "hero": false
       },
@@ -670,7 +625,7 @@
         "type": "Weather Card",
         "power": null,
         "ability": "Torrential Rain",
-        "img": "./assets/images/TorrentialRain.jpg",
+        "img": "./assets/images/TorrentialRain.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -679,7 +634,7 @@
         "type": "Weather Card",
         "power": null,
         "ability": "Impenetrable Fog",
-        "img": "./assets/images/ImpenetrableFog.jpg",
+        "img": "./assets/images/ImpenetrableFog.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -688,7 +643,7 @@
         "type": "Weather Card",
         "power": null,
         "ability": "Biting Frost",
-        "img": "./assets/images/BitingFrost.jpg",
+        "img": "./assets/images/BitingFrost.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -697,16 +652,16 @@
         "type": "Weather Card",
         "power": null,
         "ability": "Clear Weather",
-        "img": "./assets/images/ClearWeather.jpg",
+        "img": "./assets/images/ClearWeather.png",
         "fraction": "Neutral",
         "hero": false
       },
       {
-        "name": "Scorch",
+        "name": "Scarecrow",
         "type": "Special Card",
         "power": null,
-        "ability": "Scorch",
-        "img": "./assets/images/Scorch.jpg",
+        "ability": "Scarecrow",
+        "img": "./assets/images/Scarecrow.png",
         "fraction": "Neutral",
         "hero": false
       },
@@ -715,16 +670,16 @@
         "type": "Special Card",
         "power": null,
         "ability": "Commander's Horn",
-        "img": "./assets/images/CommandersHorn.jpg",
+        "img": "./assets/images/CommandersHorn.png",
         "fraction": "Neutral",
         "hero": false
       },
       {
-        "name": "Decoy",
+        "name": "Execution",
         "type": "Special Card",
         "power": null,
-        "ability": "Decoy",
-        "img": "./assets/images/Decoy.jpg",
+        "ability": "Execution",
+        "img": "./assets/images/Execution.png",
         "fraction": "Neutral",
         "hero": false
       }

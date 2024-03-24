@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { registerUser } from '../../redux/features/auth/authSlice'
 import { User } from '../../types/user'
-import { AnyAction, ThunkDispatch } from '@reduxjs/toolkit'
-import { RootState } from '../../redux/store'
+import { AppDispatch, RootState } from '../../redux/store'
 import './RegistrationPage.scss'
 import { warning } from '../../utils/toastify'
 
@@ -15,7 +14,7 @@ export const RegistrationPage:React.FC = () => {
 
   const navigate = useNavigate();
 
-  const dispatch: ThunkDispatch<any, any, AnyAction> = useDispatch()
+  const dispatch: AppDispatch = useDispatch()
 
   const isAuth: boolean = useSelector((state: RootState) => Boolean(state.auth.token))
   const serverError: string | null = useSelector((state: RootState) => state.auth.error)
