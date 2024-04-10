@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { registerUser } from '../../redux/features/auth/authSlice'
-import { User } from '../../types/user'
+import { UserData } from '../../types/interfaces'
 import { AppDispatch, RootState } from '../../redux/store'
 import './RegistrationPage.scss'
 import { warning } from '../../utils/toastify'
+import { getDecks } from '../../redux/features/deck/decksSlice'
 
 export const RegistrationPage:React.FC = () => {
   const [username, setUsername] = useState('')
@@ -30,7 +31,7 @@ export const RegistrationPage:React.FC = () => {
   }, [isAuth, navigate, serverError])
 
   const handleSubmit = () => {
-    const user: User = {
+    const user: UserData = {
       username,
       password
     }
@@ -44,6 +45,7 @@ export const RegistrationPage:React.FC = () => {
         throw new Error('Пароли не совпадают')
       }
       dispatch(registerUser(user))
+      dispatch(getDecks())
     } catch (err) {
       console.log(err)
     }

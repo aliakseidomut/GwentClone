@@ -1,12 +1,16 @@
-import React from 'react'
 import './Cards.scss'
-import { cardsInfo } from '../../assets/cards.js'
 import { Card } from '../../components/Card/Card'
+import { CardData } from '../../types/interfaces'
 
-export const Cards:React.FC = () => {  
+interface Props {
+    cards: CardData[],
+    containerName: string
+}
+
+export const Cards = ({ cards, containerName }: Props) => {  
     return (
         <div className='Cards'>
-            {cardsInfo.map(el => <Card />)}
+            {cards.map((el) => <Card cardData={el} containerName={containerName} />)}
         </div>
     )
 }

@@ -1,3 +1,5 @@
+import Deck from '../models/Deck.js';
+import Fraction from '../models/Fraction.js'
 import User from '../models/User.js'
 import jwt from 'jsonwebtoken'
 
@@ -12,9 +14,23 @@ export const register = async (req, res) => {
             })            
         }
 
+        const fractions = await Fraction.find();
+        const decksIds = [];
+
+        for (const fraction of fractions) {
+            const newDeck = new Deck({
+                fraction: fraction._id,
+                cards: [],
+                active: false
+            });
+            await newDeck.save();
+            decksIds.push(newDeck._id);
+        }
+
         const newUser = new User({
             username,
-            password
+            password,
+            decks: decksIds
         })
 
         await newUser.save()
@@ -76,10 +92,10 @@ export const login = async (req, res) => {
 
 export const getUser = async (req, res) => {
     try {
-        const user = await User.findOne(req.userId)
+        const user = await User.findById(req.userId)
         if (!user) {
             return res.json({
-                erorr: 'Такого пользователя не существует'
+                error: 'Такого пользователя не существует'
             })
         }
 
@@ -94,11 +110,11 @@ export const getUser = async (req, res) => {
         res.json({
             token,
             user,
-            erorr: 'Авторизация прошла успешно'
+            error: 'Авторизация прошла успешно'
         })
     } catch (err) {
         res.json({
-            erorr: 'Нет доступа'
+            error: 'Нет доступа'
         });
     }
 }

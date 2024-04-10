@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './LoginPage.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch, RootState } from 'redux/store'
+import { AppDispatch, RootState } from '../../redux/store'
 import { warning } from '../../utils/toastify'
-import { User } from 'types/user'
+import { UserData } from '../../types/interfaces'
 import { loginUser } from '../../redux/features/auth/authSlice'
 
 export const LoginPage:React.FC = () => {
@@ -29,7 +29,7 @@ export const LoginPage:React.FC = () => {
   }, [isAuth, navigate, serverError])
 
   const handleSubmit = () => {
-    const user: User = {
+    const user: UserData = {
       username,
       password
     }
