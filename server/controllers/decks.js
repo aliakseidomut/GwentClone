@@ -24,6 +24,15 @@ export const pushCard = async (req, res) => {
         await Deck.findByIdAndUpdate(deckId, {
             $push: { cards: cardId }
         });
+    
+        const user = await User.findById(req.userId)
+        const list = await Promise.all(
+            user.decks.map((deck) => {
+                return Deck.findById(deck._id).populate(['fraction', 'cards'])
+            })
+        )
+        
+        res.json(list)
     }
     catch (err) {
         console.log(err);
@@ -37,6 +46,15 @@ export const deleteCard = async (req, res) => {
         await Deck.findByIdAndUpdate(deckId, {
             $pull: { cards: cardId }
         });
+    
+        const user = await User.findById(req.userId)
+        const list = await Promise.all(
+            user.decks.map((deck) => {
+                return Deck.findById(deck._id).populate(['fraction', 'cards'])
+            })
+        )
+        
+        res.json(list)
     }
     catch (err) {
         console.log(err);

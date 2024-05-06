@@ -10,11 +10,7 @@ const DeckSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Card'
         }
-    ],
-    active: {
-        type: Boolean,
-        required: true,
-    }
+    ]
 })
 
 export default mongoose.model('Deck', DeckSchema)

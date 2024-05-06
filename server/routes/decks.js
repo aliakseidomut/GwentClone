@@ -6,6 +6,6 @@ const router = new Router();
 
 router.get('/', checkAuth, getDecks);
 router.post('/pushCard', checkAuth, pushCard);
-router.delete('/deleteCard', checkAuth, deleteCard);
+router.post('/deleteCard', checkAuth, deleteCard);
 
 export default router
