@@ -6,7 +6,7 @@ import { UserData } from '../../types/interfaces'
 import { AppDispatch, RootState } from '../../redux/store'
 import './RegistrationPage.scss'
 import { warning } from '../../utils/toastify'
-import { getDecks } from '../../redux/features/deck/decksSlice'
+import { getDecks } from '../../redux/features/decks/decksSlice'
 
 export const RegistrationPage:React.FC = () => {
   const [username, setUsername] = useState('')

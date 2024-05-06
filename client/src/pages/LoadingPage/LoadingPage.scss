@@ -1,0 +1,33 @@
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.LoadingPage {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, rgb(87, 87, 87), rgb(184, 184, 184));
+
+    .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 50px;
+
+        img {
+            width: 150px;
+            animation: spin 1.5s linear infinite;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: "Bree Serif", serif;
+        }
+    }
+}

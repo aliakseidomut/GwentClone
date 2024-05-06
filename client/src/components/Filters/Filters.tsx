@@ -21,37 +21,37 @@ export const Filters = ({filterType, onSetFilter}: Props) => {
             
             <label>
                 <input type="radio" name={filterType} id="all" value={`all`} defaultChecked onChange={handleChange} />
-                <TbCardsFilled className='icon' size={45} />
+                <TbCardsFilled className='icon' size={40} />
             </label>
 
             <label>
                 <input type="radio" name={filterType} id="close" value={`CloseCombat`} onChange={handleChange} />
-                <LuSword className='icon' size={45} />
+                <LuSword className='icon' size={40} />
             </label>
 
             <label>
                 <input type="radio" name={filterType} id="ranged" value={`RangedCombat`} onChange={handleChange} />
-                <GiCrossbow className='icon' size={45} />
+                <GiCrossbow className='icon' size={40} />
             </label>
 
             <label>
                 <input type="radio" name={filterType} id="siege" value={`SiegeCombat`} onChange={handleChange} />
-                <GiCatapult className='icon' size={45} />
+                <GiCatapult className='icon' size={40} />
             </label>
 
             <label>
                 <input type="radio" name={filterType} id="heroes" value={`Heroes`} onChange={handleChange} />
-                <GiBlackKnightHelm className='icon' size={45} />
+                <GiBlackKnightHelm className='icon' size={40} />
             </label>
 
             <label>
                 <input type="radio" name={filterType} id="weather" value={`WeatherCard`} onChange={handleChange} />
-                <FaSun className='icon' size={45} />
+                <FaSun className='icon' size={40} />
             </label>
 
             <label>
                 <input type="radio" name={filterType} id="special" value={`SpecialCard`} onChange={handleChange} />
-                <GiMoebiusStar className='icon' size={45} />
+                <GiMoebiusStar className='icon' size={40} />
             </label>
         </div>
     )

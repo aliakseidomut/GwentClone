@@ -37,7 +37,7 @@ export const pushCard = createAsyncThunk(
                 deckId,
                 cardId,
             });
-            return data;
+            return { decks: data, error: null };
         } catch (err) {
             console.log(err);
         }
@@ -48,11 +48,11 @@ export const deleteCard = createAsyncThunk(
     'decks/deleteCard',
     async ({ deckId, cardId }) => {
         try {
-            const { data } = await axios.delete('/decks/deleteCard', {
+            const { data } = await axios.post('/decks/deleteCard', {
                 deckId,
                 cardId,
               });
-            return data;
+              return { decks: data, error: null };
         } catch (err) {
             console.log(err);
         }

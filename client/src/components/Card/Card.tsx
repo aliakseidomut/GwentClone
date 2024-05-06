@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CardData } from '../../types/interfaces';
 import './Card.scss'
 import { AppDispatch, RootState } from '../../redux/store';
-import { deleteCard, pushCard } from '../../redux/features/deck/decksSlice';
+import { deleteCard, pushCard } from '../../redux/features/decks/decksSlice';
 
 interface Props {
     cardData: CardData,

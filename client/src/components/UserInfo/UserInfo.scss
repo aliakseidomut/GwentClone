@@ -1,0 +1,61 @@
+.UserInfo {
+    display: flex;
+    font-family: "Bree Serif", serif;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.432);
+    padding: 15px;
+    width: 300px;
+    border-radius: 0px 10px 10px 0px;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+        margin: 0;
+    }
+
+    .username {
+        margin-bottom: 10px;
+    }
+
+    .cardsNum {
+        display: flex;
+        gap: 7px;
+        margin-bottom: 10px;
+    }
+
+    .fraction {
+        font-size: 16px;
+    }
+
+    .rounds {
+        display: flex;
+        gap: 7px;
+    }
+
+    .circle {
+        width: 30px;
+        height: 30px;
+        background-color: rgb(212, 38, 38);
+        border: 1px solid rgba(255, 255, 255, 0.493);
+        border-radius: 50%;
+    }
+
+    .circle_lost {
+        width: 30px;
+        height: 30px;
+        background-color: rgb(104, 104, 104);
+        border: 1px solid rgba(255, 255, 255, 0.493);
+        border-radius: 50%;
+    }
+
+    .totalPower {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        box-shadow: 0px 0px 10px white;
+    }
+}

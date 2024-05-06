@@ -24,11 +24,23 @@
     background: linear-gradient(to bottom right, rgb(9, 68, 14), rgb(8, 5, 36));
     color: white;
     padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+    .logout {
+      align-self: flex-end;
+      margin-right: 50px;
+    
+      &:hover {
+        color: #ffffff88;
+        cursor: pointer;
+      }
+    }
 
     img {
         width: 500px;
         display: block;
-        margin: 0 auto;
+        margin: 30px auto 0;
     }
 
     .buttonContainer {
@@ -37,7 +49,11 @@
         margin-top: 40px;
     }
     
-    button {
+    .button {
+        display: flex;
+        text-decoration-line: none;
+        align-items: center;
+        justify-content: center;
         overflow: hidden;
         position: relative;
         width: 130px;
@@ -74,30 +90,5 @@
             animation-timing-function: ease-in-out;
             animation-iteration-count: infinite;
           }
-    }
-
-    .Link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100px;
-        height: 30px;
-        border-radius: 10px;
-        margin: 0 auto;
-        border: 1px solid white;
-        background-color: rgba(255, 255, 255, 0.205);
-        color: white;
-        text-decoration-line: none;
-        margin-top: 25px;
-        padding: 3px;
-        font-family: "Bree Serif", serif;
-
-        &:hover {
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            background-color: rgba(255, 255, 255, 0.082);
-            color: rgba(255, 255, 255, 0.5);
-            transition: .3s;
-            cursor: pointer;
-        }
     }
 }

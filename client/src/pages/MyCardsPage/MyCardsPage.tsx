@@ -4,10 +4,11 @@ import { CardsPageHeader } from '../../components/CardsPageHeader/CardsPageHeade
 import { Cards } from '../../components/Cards/Cards';
 import { Filters } from '../../components/Filters/Filters';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDecks } from '../../redux/features/deck/decksSlice';
+import { getDecks } from '../../redux/features/decks/decksSlice';
 import { AppDispatch, RootState } from '../../redux/store';
 import axios from "../../utils/axios";
 import { CardData } from '../../types/interfaces';
+import { Stats } from '../../components/Stats/Stats';
 
 export const MyCardsPage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -43,6 +44,7 @@ export const MyCardsPage: React.FC = () => {
 
   const filteredCollection = cardsCollection.filter((el: CardData) => 
     (el.fraction === decks[currentDeckNum].fraction.name || el.fraction === 'Neutral') &&
+    (!decks[currentDeckNum].cards.some(card => card.name === el.name)) &&
     (
       colFilterName === 'all' ||
       (el.hero && colFilterName === 'Heroes') ||
@@ -51,9 +53,9 @@ export const MyCardsPage: React.FC = () => {
   )
 
   const filteredDeck = decks[currentDeckNum].cards.filter((el: CardData) => 
-      deckFilterName === 'all' ||
-      (el.hero && deckFilterName === 'Heroes') ||
-      el.type === deckFilterName
+    deckFilterName === 'all' ||
+    (el.hero && deckFilterName === 'Heroes') ||
+    el.type === deckFilterName
   )
 
   return (
@@ -64,6 +66,10 @@ export const MyCardsPage: React.FC = () => {
         <div className='collection'>
           <Filters onSetFilter={ handleSetColFilter } filterType="collection" />
           <Cards cards={filteredCollection} containerName={'collection'}  />
+        </div>
+
+        <div>
+          <Stats />
         </div>
 
         <div className='deck'>

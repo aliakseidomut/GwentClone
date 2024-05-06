@@ -32,3 +32,24 @@ export interface LeaderData {
     name: string
     ability: string
 }
+
+export interface RoomData {
+    _id?: string
+    users: UserData[] 
+}
+
+export interface UserGameState {
+    username: string 
+    fraction: string
+    cardsOnTheTable: CardData[]
+    currentCards: CardData[]
+    cardsInDeck: CardData[]
+    lostCards: CardData[]
+    totalPower: number
+    lostRounds: number
+  }
+
+export interface GameState {
+    user: UserGameState,
+    opponent: UserGameState
+}

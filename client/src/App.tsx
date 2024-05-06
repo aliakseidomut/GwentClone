@@ -4,6 +4,7 @@ import { RegistrationPage } from './pages/RegistrationPage/RegistrationPage';
 import { LoginPage } from './pages/LoginPage/LoginPage';
 import { MainPage } from './pages/MainPage/MainPage';
 import { MyCardsPage } from './pages/MyCardsPage/MyCardsPage';
+import { PlayPage } from './pages/PlayPage/PlayPage';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { AppDispatch } from './redux/store';
@@ -24,8 +25,12 @@ const router = createBrowserRouter([
     element: <MainPage />
   },
   {
-    path: 'myCards',
+    path: '/myCards',
     element: <MyCardsPage />
+  },
+  {
+    path: '/play',
+    element: <PlayPage />
   }
 ])
 
