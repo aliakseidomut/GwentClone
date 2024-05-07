@@ -7,11 +7,12 @@ import { getRoom } from '../../redux/features/room/roomSlice';
 import { UserInfo } from '../../components/UserInfo/UserInfo';
 import { io } from 'socket.io-client';
 import { UserGameState } from '../../types/interfaces';
+import { CardsOutPlay } from '../../components/CardsOutPlay/CardsOutPlay';
 
 const socket = io('http://localhost:3002');
 
 export const PlayPage: React.FC = () => {
-const dispatch:AppDispatch = useDispatch();
+const dispatch: AppDispatch = useDispatch();
 const decks = useSelector((state: RootState) => state.decks.decks);
 const currentDeckNum = useSelector((state: RootState) => state.decks.currentDeckNum) || 0;
 const roomId = useSelector((state: RootState) => state.room.room?._id);
@@ -70,6 +71,10 @@ if (!gameState || !gameState.user || !gameState.opponent) {
         <UserInfo user={gameState.user} />
       </div>
       <div className="table"></div>
+      <div className="cardsOutPlay">
+        <CardsOutPlay cardsInDeck={gameState.opponent.cardsInDeck} lostCards={gameState.opponent.lostCards} />
+        <CardsOutPlay cardsInDeck={gameState.user.cardsInDeck} lostCards={gameState.user.lostCards} />
+      </div>
     </div>
   );
 };
