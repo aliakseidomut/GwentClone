@@ -1,9 +1,11 @@
 export const randomCards = (cards) => {
     let randomArray = [];
     
-    for (let i = 0; i < 10; i++) {
+    while (randomArray.length < 10) {
       let randomNumber = Math.floor(Math.random() * cards.length);
-      randomArray.push(randomNumber);
+      if (!randomArray.includes(randomNumber)) {
+        randomArray.push(randomNumber);
+      }
     }
 
     return randomArray.map(el => cards[el])

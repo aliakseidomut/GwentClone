@@ -8,29 +8,36 @@ import { UserInfo } from '../../components/UserInfo/UserInfo';
 import { io } from 'socket.io-client';
 import { UserGameState } from '../../types/interfaces';
 import { CardsOutPlay } from '../../components/CardsOutPlay/CardsOutPlay';
+import { CardsOnTable } from '../../components/CardsOnTable/CardsOnTable';
 
 const socket = io('http://localhost:3002');
 
 export const PlayPage: React.FC = () => {
-const dispatch: AppDispatch = useDispatch();
-const decks = useSelector((state: RootState) => state.decks.decks);
-const currentDeckNum = useSelector((state: RootState) => state.decks.currentDeckNum) || 0;
-const roomId = useSelector((state: RootState) => state.room.room?._id);
-const user = useSelector((state: RootState) => state.auth.user);
+  const dispatch: AppDispatch = useDispatch();
+  const decks = useSelector((state: RootState) => state.decks.decks);
+  const currentDeckNum = useSelector((state: RootState) => state.decks.currentDeckNum) || 0;
+  const roomId = useSelector((state: RootState) => state.room.room?._id);
+  const user = useSelector((state: RootState) => state.auth.user);
 
-const [gameState, setGameState] = useState(null);
+  const [gameState, setGameState] = useState(null);
 
-useEffect(() => {
-  dispatch(getRoom());
-  if (!localStorage.getItem('gameState')){
-    socket.emit('join', {
-      roomId,
-      userData: {
-        username: user?.username,
-        deck: decks[currentDeckNum],
-      },
-    });
+  function getImgUrl(fileName: string){
+    const ext = '.png'
+    const imgUrl = new URL(`../../assets/images/cardsImages/${fileName}${ext}`, import.meta.url).href
+    return imgUrl
   }
+
+  useEffect(() => {
+    dispatch(getRoom());
+    if (!localStorage.getItem('gameState')){
+      socket.emit('join', {
+        roomId,
+        userData: {
+          username: user?.username,
+          deck: decks[currentDeckNum],
+        },
+    });
+    }
 
   socket.on('gameState', ({ gameState }) => {
     const userGameState: UserGameState = gameState.filter(el => el.username === user?.username);
@@ -70,10 +77,18 @@ if (!gameState || !gameState.user || !gameState.opponent) {
 
         <UserInfo user={gameState.user} />
       </div>
-      <div className="table"></div>
+      
+      <div className="table">
+        <CardsOnTable userStatus='opponent' />
+        <CardsOnTable userStatus='user' />
+        <div className='currentCards'>
+          {gameState.user.currentCards.map(el => <img src={getImgUrl(el.name.split(' ').join(''))} className='currentCardsCard' />)}
+        </div>
+      </div>
+      
       <div className="cardsOutPlay">
-        <CardsOutPlay cardsInDeck={gameState.opponent.cardsInDeck} lostCards={gameState.opponent.lostCards} />
-        <CardsOutPlay cardsInDeck={gameState.user.cardsInDeck} lostCards={gameState.user.lostCards} />
+        <CardsOutPlay cardsInDeck={gameState.opponent.cardsInDeck} lostCards={gameState.opponent.lostCards} fraction={gameState.opponent.fraction} />
+        <CardsOutPlay cardsInDeck={gameState.user.cardsInDeck} lostCards={gameState.user.lostCards} fraction={gameState.user.fraction} />
       </div>
     </div>
   );
