@@ -38,21 +38,16 @@ export const PlayPage: React.FC = () => {
         },
     });
     }
+  }, [currentDeckNum, decks, dispatch, roomId, user]);
 
-  socket.on('gameState', ({ gameState }) => {
-    const userGameState: UserGameState = gameState.filter(el => el.username === user?.username);
-    const opponentGameState: UserGameState = gameState.filter(el => el.username !== user?.username);
-    
-    setGameState({user: userGameState, opponent: opponentGameState});
-  });
-}, [currentDeckNum, decks, dispatch, roomId, user]);
+  useEffect(() => {
+    const savedGameState = localStorage.getItem('gameState');
+    if (savedGameState) {
+      setGameState(JSON.parse(savedGameState));
+    }
+  }, []);
 
-useEffect(() => {
-  const savedGameState = localStorage.getItem('gameState');
-  
-  if (savedGameState) {
-    setGameState(JSON.parse(savedGameState));
-  } else {
+  useEffect(() => {
     socket.on('gameState', ({ gameState }) => {
       const userGameState: UserGameState = gameState.filter(el => el.username === user?.username)[0];
       const opponentGameState: UserGameState = gameState.filter(el => el.username !== user?.username)[0];
@@ -60,29 +55,42 @@ useEffect(() => {
       setGameState({user: userGameState, opponent: opponentGameState});
       
       localStorage.setItem('gameState', JSON.stringify({user: userGameState, opponent: opponentGameState}));
-    });
-  }
-}, [])
+    })
+  }, [user]);
 
-if (!gameState || !gameState.user || !gameState.opponent) {
-  return <LoadingPage />;
-}
+  if (!gameState || !gameState.user || !gameState.opponent) {
+    return <LoadingPage />;
+  }
 
   return (
     <div className="PlayPage">
       <div className="info">
         <UserInfo user={gameState.opponent}/>
         
-        <div className='specialCards'></div>
+        <div className='specialCards'>
+          {
+            [...gameState.user.cardsOnTable, ...gameState.opponent.cardsOnTable].filter(el => el.type === 'SpecialCard').map(el => <img src={getImgUrl(el.name.split(' ').join(''))} />)
+
+          }
+        </div>
 
         <UserInfo user={gameState.user} />
       </div>
       
       <div className="table">
-        <CardsOnTable userStatus='opponent' />
-        <CardsOnTable userStatus='user' />
+        <CardsOnTable userStatus='opponent' cardsOnTable={gameState.opponent.cardsOnTable}  />
+        <CardsOnTable userStatus='user' cardsOnTable={gameState.user.cardsOnTable} />
         <div className='currentCards'>
-          {gameState.user.currentCards.map(el => <img src={getImgUrl(el.name.split(' ').join(''))} className='currentCardsCard' />)}
+          {
+            gameState.user.currentCards.map((el, i) => 
+            <img 
+              src={getImgUrl(el.name.split(' ').join(''))} 
+              className='currentCardsCard' 
+              onClick={() => {
+                socket.emit('pushCard', {username: gameState.user.username, cardIndex: i});
+              }}
+            />
+          )}
         </div>
       </div>
       

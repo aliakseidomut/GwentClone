@@ -33,9 +33,11 @@ const io = new Server(server, {
   
   const roomData = {
     id: null,
-    gameState: [],
+    gameState: []
   };
   
+  let currentPlayerIndex = 0;
+
   io.on('connection', (socket) => {
     socket.on('join', ({ roomId, userData }) => {
       roomData.id = roomId;
@@ -51,7 +53,7 @@ const io = new Server(server, {
         roomData.gameState.push({
           username: userData.username,
           fraction: userData.deck.fraction.name,
-          cardsOnTheTable: [],
+          cardsOnTable: [],
           currentCards: currentCards,
           cardsInDeck: cardsInDeck,
           lostCards: [],
@@ -67,9 +69,26 @@ const io = new Server(server, {
       }
     });
   
-    socket.on('disconnect', () => {});
+    socket.on('pushCard', ({ username, cardIndex }) => {
+      const userIndex = roomData.gameState.findIndex((user) => user.username === username);
+      if (userIndex !== -1 && userIndex === currentPlayerIndex) {
+        const user = roomData.gameState[userIndex];
+        const card = user.currentCards[cardIndex];
+  
+        user.currentCards.splice(cardIndex, 1);
+        user.cardsOnTable.push(card);
+        user.totalPower += card.power;
+  
+        currentPlayerIndex = (currentPlayerIndex + 1) % 2;
+      }
+  
+      io.to(roomData.id).emit('gameState', { gameState: roomData.gameState });
+    });
+  
+    socket.on('disconnect', () => {
+    });
   });
-
+  
 
 
 const start = async () => {

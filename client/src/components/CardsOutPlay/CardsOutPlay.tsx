@@ -13,8 +13,6 @@ export const CardsOutPlay = ({lostCards, cardsInDeck, fraction}:Props) => {
         const imgUrl = new URL(`../../assets/images/cardsImages/${fileName}${ext}`, import.meta.url).href
         return imgUrl
     }
-    
-    console.log(localStorage.getItem('gameState'))
 
     return (
         <div className='CardsOutPlay'>

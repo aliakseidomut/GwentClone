@@ -1,23 +1,43 @@
 .userCardsOnTable {    
     margin-top: 10px;
 
+    display: flex;
+    flex-direction: column;
+
     div {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
         width: 965px;
         height: 120px;
         background-color: rgba(255, 255, 255, 0.171);
         box-shadow: inset 0 0 5px black;
         margin-bottom: 10px;
     }
+
+    img {
+        width: 63px;
+    }
 }
 
 .opponentCardsOnTable {
     border-bottom: 1px solid black;
 
+    display: flex;
+    flex-direction: column-reverse;
+
     div {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
         width: 965px;
         height: 120px;
         background-color: rgba(255, 255, 255, 0.171);
         box-shadow: inset 0 0 5px black;
         margin-bottom: 10px;
+    }
+
+    img {
+       width: 65px;
     }
 }
